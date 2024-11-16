@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/css/_reset.css" />
+    <link rel="stylesheet" href="stylesheets/css/main.css" />
+    <title>lineApp</title>
+    <script type="text/javascript" src="js/index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <div class="l-wrapper">
+      <!-- 練習問題 -->
+      <div class="l-taskWrapper">
+        <div class="p-task">
+          <p class="p-task__title">1: メッセージの送信機能</p>
+          <p>目的: ユーザーが入力したメッセージをチャット画面に表示する。</p>
+          <p>手順:</p>
+          <ul class="p-task__list">
+            <li>テキストボックスに入力されたメッセージを取得する。</li>
+            <li>送信ボタンがクリックされたときに、テンプレートからメッセージ要素をクローンしてチャット画面に追加する。</li>
+            <li>メッセージが送信されたら、テキストボックスをクリアする。</li>
+          </ul>
+          <p>ヒント:</p>
+          <ul class="p-task__list">
+            <li><code>document.querySelector</code>を使って、テキストボックス、送信ボタン、およびテンプレートを取得する。</li>
+            <li><code>addEventListener</code>を使って、ボタンのクリックイベントを監視する。</li>
+            <li><code>template.content.cloneNode(true)</code>と<code>appendChild</code>を使って、テンプレートの内容をクローンし、DOMに追加する。</li>
+          </ul>
+        </div>
+
+        <div class="p-task">
+          <p class="p-task__title">2: メッセージの時間表示</p>
+          <p>目的: 送信されたメッセージにタイムスタンプを表示する。</p>
+          <p>手順:</p>
+          <ul class="p-task__list">
+            <li>現在の時間を取得する。</li>
+            <li>メッセージが送信されたときに、テンプレートからメッセージ要素をクローンしてチャット画面に追加し、タイムスタンプを表示する。</li>
+          </ul>
+          <p>ヒント:</p>
+          <ul class="p-task__list">
+            <li><code>new Date()</code>を使って、現在の時間を取得する。</li>
+            <li><code>.toLocaleTimeString()</code>を使って、時間をフォーマットする。</li>
+            <li>テンプレートのタイムスタンプ要素を更新する</li>
+          </ul>
+        </div>
+
+        <div class="p-task">
+          <p class="p-task__title">3: 送信済みメッセージのスタイル変更</p>
+          <p>目的: 送信済みメッセージの背景色を変更する。</p>
+          <p>手順:</p>
+          <ul class="p-task__list">
+            <li>送信済みメッセージの<code>div</code>に特定のクラスを追加する。</li>
+            <li>CSSでそのクラスに対してスタイルを適用する。</li>
+          </ul>
+          <p>ヒント:</p>
+          <ul class="p-task__list">
+            <li><code>classList.add</code>を使って、クラスを追加する。</li>
+            <li>CSSでクラスに対してスタイルを定義する。</li>
+          </ul>
+        </div>
+
+        <div class="p-task">
+          <p class="p-task__title">4: 自動応答機能</p>
+          <p>目的: ユーザーがメッセージを送信した後、自動で応答メッセージを表示する。</p>
+          <p>手順:</p>
+          <ul class="p-task__list">
+            <li>ユーザーがメッセージを送信した後、テンプレートから自動応答メッセージ要素をクローンして、一定時間後にチャット画面に追加する。</li>
+            <li>自動応答メッセージは配列の中からランダムに選ばれた内容にする。</li>
+          </ul>
+          <p>ヒント:</p>
+          <ul class="p-task__list">
+            <li><code>setTimeout</code>を使って、一定時間後に自動応答メッセージを表示する。</li>
+            <li>練習問題1の方法を応用して、自動応答メッセージをチャット画面に追加する。</li>
+            <li>配列を使って複数のメッセージを用意し、ランダムにメッセージを選択する。</li>
+          </ul>
+        </div>
+
+        <div class="p-task">
+          <p class="p-task__title">5: 未読メッセージのカウント</p>
+          <p>目的: 未読メッセージの数をヘッダーに表示する。</p>
+          <p>手順:</p>
+          <ul class="p-task__list">
+            <li>新しいメッセージが送信されるたびに、未読メッセージのカウントを更新する。</li>
+            <li>ヘッダーに未読メッセージの数を表示する。</li>
+          </ul>
+          <p>ヒント:</p>
+          <ul class="p-task__list">
+            <li>カウントを保持する変数を作成する。</li>
+            <li>メッセージが送信されるたびに、変数をインクリメントする。</li>
+            <li>ヘッダーの要素を更新する。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- LINEトーク画面 -->
+      <div class="l-chatWrapper">
+        <div class="p-chatHeader">
+          <div class="p-chatHeader__menu">
+            <i data-feather="arrow-left"></i>
+            <i data-feather="star"></i>
+            <div class="p-chatHeader__title">CONVICTION公式</div>
+          </div>
+          <div class="p-chatHeader__menu">
+            <i data-feather="search"></i>
+            <i data-feather="phone"></i>
+            <i data-feather="menu"></i>
+          </div>
+        </div>
+        <div class="p-chatContents">
+          <div class="p-chatContents__message u-flex-start">
+            <div class="p-chatContents__messageText">
+              <p>お友達登録ありがとうございます。</p>
+            </div>
+            <div class="p-chatContents__messageTime">
+              <span class="timestamp">12:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-chatFooter">
+          <i data-feather="plus"></i>
+          <i data-feather="camera"></i>
+          <i data-feather="image"></i>
+          <input type="text" class="c-input" placeholder="メッセージを入力" />
+          <button class="c-button">
+            <i data-feather="send"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
