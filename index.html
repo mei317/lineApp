@@ -19,82 +19,106 @@
       <div class="l-taskWrapper">
         <div class="p-task">
           <p class="p-task__title">1: メッセージの送信機能</p>
-          <p>目的: ユーザーが入力したメッセージをチャット画面に表示する。</p>
-          <p>手順:</p>
-          <ul class="p-task__list">
-            <li>テキストボックスに入力されたメッセージを取得する。</li>
-            <li>送信ボタンがクリックされたときに、テンプレートからメッセージ要素をクローンしてチャット画面に追加する。</li>
-            <li>メッセージが送信されたら、テキストボックスをクリアする。</li>
-          </ul>
-          <p>ヒント:</p>
-          <ul class="p-task__list">
-            <li><code>document.querySelector</code>を使って、テキストボックス、送信ボタン、およびテンプレートを取得する。</li>
-            <li><code>addEventListener</code>を使って、ボタンのクリックイベントを監視する。</li>
-            <li><code>template.content.cloneNode(true)</code>と<code>appendChild</code>を使って、テンプレートの内容をクローンし、DOMに追加する。</li>
-          </ul>
+          <p>ユーザーが入力したメッセージをテンプレートを使用してチャット画面に表示する。</p>
+          <details>
+            <summary>ロジック</summary>
+            <ul class="p-task__list">
+              <li>1. テキストボックスに入力されたメッセージを取得する。</li>
+              <li>2. 送信ボタンがクリックされたときに、テンプレートからメッセージ要素をクローンする。</li>
+              <li>3. チャット画面に追加する。</li>
+              <li>4. メッセージが送信されたら、テキストボックスをクリアする。</li>
+            </ul>
+          </details>
+          <details>
+            <summary>ヒント</summary>
+            <ul class="p-task__list">
+              <li><code>document.querySelector</code>を使って、テキストボックス、送信ボタン、およびテンプレートを取得する。</li>
+              <li><code>addEventListener</code>を使って、ボタンのクリックイベントを監視する。</li>
+              <li><code>template.content.cloneNode(true)</code>と<code>appendChild</code>を使って、テンプレートの内容をクローンし、DOMに追加する。</li>
+            </ul>
+          </details>
         </div>
-
         <div class="p-task">
           <p class="p-task__title">2: メッセージの時間表示</p>
-          <p>目的: 送信されたメッセージにタイムスタンプを表示する。</p>
-          <p>手順:</p>
-          <ul class="p-task__list">
-            <li>現在の時間を取得する。</li>
-            <li>メッセージが送信されたときに、テンプレートからメッセージ要素をクローンしてチャット画面に追加し、タイムスタンプを表示する。</li>
-          </ul>
-          <p>ヒント:</p>
-          <ul class="p-task__list">
-            <li><code>new Date()</code>を使って、現在の時間を取得する。</li>
-            <li><code>.toLocaleTimeString()</code>を使って、時間をフォーマットする。</li>
-            <li>テンプレートのタイムスタンプ要素を更新する</li>
-          </ul>
+          <p>送信されたメッセージにタイムスタンプを表示する。</p>
+          <details>
+            <summary>ロジック</summary>
+            <ul class="p-task__list">
+              <li>1. 現在の時間を取得する。</li>
+              <li>2. １に記述を追加しチャット画面にタイムスタンプを一緒に表示する。</li>
+            </ul>
+          </details>
+          <details>
+            <summary>ヒント</summary>
+            <ul class="p-task__list">
+              <li><code>new Date()</code>を使って、現在の時間を取得する。</li>
+              <li><code>.toLocaleTimeString()</code>を使って、時間をフォーマットする。</li>
+              <li>テンプレートのタイムスタンプ要素を更新する</li>
+            </ul>
+          </details>
         </div>
-
         <div class="p-task">
           <p class="p-task__title">3: 送信済みメッセージのスタイル変更</p>
-          <p>目的: 送信済みメッセージの背景色を変更する。</p>
-          <p>手順:</p>
-          <ul class="p-task__list">
-            <li>送信済みメッセージの<code>div</code>に特定のクラスを追加する。</li>
-            <li>CSSでそのクラスに対してスタイルを適用する。</li>
-          </ul>
-          <p>ヒント:</p>
-          <ul class="p-task__list">
-            <li><code>classList.add</code>を使って、クラスを追加する。</li>
-            <li>CSSでクラスに対してスタイルを定義する。</li>
-          </ul>
+          <p>送信済みメッセージの背景色を変更する。</p>
+          <details>
+            <summary>ロジック</summary>
+            <ul class="p-task__list">
+              <li>1. 送信済みメッセージの<code>div</code>に特定のクラスを追加する。</li>
+              <li>2. CSSでそのクラスに対してスタイルを適用する。</li>
+            </ul>
+          </details>
+          <details>
+            <summary>ヒント</summary>
+            <ul class="p-task__list">
+              <li><code>classList.add</code>を使って、クラスを追加する。</li>
+              <li></li>
+            </ul>
+          </details>
         </div>
 
         <div class="p-task">
           <p class="p-task__title">4: 自動応答機能</p>
-          <p>目的: ユーザーがメッセージを送信した後、自動で応答メッセージを表示する。</p>
-          <p>手順:</p>
-          <ul class="p-task__list">
-            <li>ユーザーがメッセージを送信した後、テンプレートから自動応答メッセージ要素をクローンして、一定時間後にチャット画面に追加する。</li>
-            <li>自動応答メッセージは配列の中からランダムに選ばれた内容にする。</li>
-          </ul>
-          <p>ヒント:</p>
-          <ul class="p-task__list">
-            <li><code>setTimeout</code>を使って、一定時間後に自動応答メッセージを表示する。</li>
-            <li>練習問題1の方法を応用して、自動応答メッセージをチャット画面に追加する。</li>
-            <li>配列を使って複数のメッセージを用意し、ランダムにメッセージを選択する。</li>
-          </ul>
+          <p>ユーザーがメッセージを送信した後、自動で応答メッセージを表示する。</p>
+
+          <details>
+            <summary>ロジック</summary>
+            <ul class="p-task__list">
+              <li>1.ユーザーがメッセージを送信した後、テンプレートから自動応答メッセージ要素をクローンする。</li>
+              <li>2.一定時間後にチャット画面に追加する。</li>
+              <li>3.自動応答メッセージは配列の中からランダムに選ばれた内容にする。</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>ヒント</summary>
+            <ul class="p-task__list">
+              <li><code>setTimeout</code>を使って、一定時間後に自動応答メッセージを表示する。</li>
+              <li>練習問題1の方法を応用して、自動応答メッセージをチャット画面に追加する。</li>
+              <li>配列を使って複数のメッセージを用意し、ランダムにメッセージを選択する。</li>
+            </ul>
+          </details>
         </div>
 
         <div class="p-task">
           <p class="p-task__title">5: 未読メッセージのカウント</p>
-          <p>目的: 未読メッセージの数をヘッダーに表示する。</p>
-          <p>手順:</p>
-          <ul class="p-task__list">
-            <li>新しいメッセージが送信されるたびに、未読メッセージのカウントを更新する。</li>
-            <li>ヘッダーに未読メッセージの数を表示する。</li>
-          </ul>
-          <p>ヒント:</p>
-          <ul class="p-task__list">
-            <li>カウントを保持する変数を作成する。</li>
-            <li>メッセージが送信されるたびに、変数をインクリメントする。</li>
-            <li>ヘッダーの要素を更新する。</li>
-          </ul>
+          <p>未読メッセージの数をヘッダーに表示する。</p>
+
+          <details>
+            <summary>ロジック</summary>
+            <ul class="p-task__list">
+              <li>1.新しいメッセージが送信されるたびに、未読メッセージのカウントを更新する。</li>
+              <li>2.ヘッダーに未読メッセージの数を表示する。</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>ヒント</summary>
+            <ul class="p-task__list">
+              <li>カウントを保持する変数を作成する。</li>
+              <li>メッセージが送信されるたびに、変数をインクリメントする。</li>
+              <li>ヘッダーの要素を更新する。</li>
+            </ul>
+          </details>
         </div>
       </div>
 
@@ -133,7 +157,6 @@
         </div>
       </div>
     </div>
-
     <script>
       feather.replace();
     </script>

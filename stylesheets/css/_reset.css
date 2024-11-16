@@ -15,6 +15,17 @@ a {
 
 body {
   line-height: 1.5;
+  user-select: none;
+}
+
+details {
+  margin-top: 0.5rem;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 ul[class],
