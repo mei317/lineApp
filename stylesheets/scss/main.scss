@@ -181,20 +181,31 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+  position: relative;
 }
 
 .c-input {
-  padding: 1rem;
+  max-width: 23rem;
   border: 1px solid #ccc;
   border-radius: 2rem;
   font-size: 1.4rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 4rem 0.5rem 1rem;
 }
 
 .c-button {
   cursor: pointer;
   border: none;
-  background-color: #fff;
+  background-color: transparent;
+
+  &.-stamp {
+    position: absolute;
+    right: 70px;
+    top: 18px;
+  }
+}
+
+.feather.feather-smile {
+  color: #aaa;
 }
 
 .feather.feather-plus {
